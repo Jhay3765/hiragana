@@ -2,12 +2,13 @@
 import AppNavBar from "@/app/components/AppNavBar";
 import Image from "next/image";
 import { useState } from "react";
-import { commonThingsQuiz as quizData } from "@/app/utils/quizData";
+
 import { shuffleNumbers } from "@/app/utils/lib";
 import Link from "next/link";
 
-export default function Page() {
-  const amountOfQuestions = quizData.length; // Number of questions in the array
+export default function BasicQuiz(props: any) {
+  const quizData = props.quizData;
+  const amountOfQuestions = quizData.quizQuestions.length; // Number of questions in the array
   const shuffledNumbers = shuffleNumbers(123);
   const [selected, setSelected] = useState("");
   const [wrong, setWrong] = useState(false);
@@ -26,12 +27,23 @@ export default function Page() {
     setSelectedButton(null);
     setQuizStarted(false);
     setQuizEnded(false);
+    setScore(0);
   };
 
   if (quizEnded) {
     return (
-      <div className="bg-indigo-300 h-screen">
-        <AppNavBar name="Quiz" />
+      <div className="bg-white h-screen">
+        <div className="absolute top-0 w-full pointer-events-none ">
+          <div className="relative h-[600px] w-full ">
+            <Image
+              src={"/assets/images/layered-peaks.svg"}
+              alt=""
+              fill
+              className="object-cover "
+            />
+          </div>
+        </div>
+        <AppNavBar name="quiz" />
         <main className="max-w-4xl mx-auto pt-24">
           <p className="text-7xl tracking-tighter">Good Work!</p>
           <p className="text-3xl font-light  mt-20">
@@ -58,12 +70,12 @@ export default function Page() {
   }
 
   const choices = [
-    quizData[count].choices[shuffledNumbers[0]],
-    quizData[count].choices[shuffledNumbers[1]],
-    quizData[count].choices[shuffledNumbers[2]],
-    quizData[count].choices[shuffledNumbers[3]],
+    quizData.quizQuestions[count].choices[shuffledNumbers[0]],
+    quizData.quizQuestions[count].choices[shuffledNumbers[1]],
+    quizData.quizQuestions[count].choices[shuffledNumbers[2]],
+    quizData.quizQuestions[count].choices[shuffledNumbers[3]],
   ];
-  const answer = quizData[count].correctAnswer;
+  const answer = quizData.quizQuestions[count].correctAnswer;
 
   const handleClick = (choiceNumber: string, choiceButton: number) => {
     setSelected(choiceNumber);
@@ -82,7 +94,7 @@ export default function Page() {
     }
   };
   const handleNextButton = () => {
-    if (count >= quizData.length - 1) {
+    if (count >= quizData.quizQuestions.length - 1) {
       setQuizEnded(true);
     }
     setCount(count + 1);
@@ -94,25 +106,27 @@ export default function Page() {
 
   if (!quizStarted) {
     return (
-      <div className="bg-indigo-200">
-        <AppNavBar name="Quiz" />
+      <div className="bg-white">
+        <section className="flex justify-between bg-zinc-900 text-white py-4 px-4">
+          <Link href={"/quiz"} className="text-xl ">
+            {"<"} Back
+          </Link>
+          <section className="text-right text-xl flex gap-8 ">
+            <p className="tracking-tighter">{quizData.quizInfo.title}</p>
+          </section>
+        </section>
         <main className="h-screen max-w-3xl mx-auto pt-24 ">
-          <h1 className="text-6xl">Common Things Part 1</h1>
+          <h1 className="text-6xl mt-4 font-bold tracking-tighter">
+            {quizData.quizInfo.title}
+          </h1>
           <p className="max-w-xl text-xl mt-8">
-            Test your knowledge of common items with Common Things Quiz! This
-            interactive quiz game challenges players to identify everyday
-            objects based on images. With a variety of questions spanning from
-            household items to everyday tools, players will put their
-            observation skills to the test. To play, simply click &apos;Start
-            Quiz&apos; and begin answering questions. Each question presents an
-            image of an object along with multiple-choice options. Choose the
-            correct answer by clicking on the corresponding button.
+            {quizData.quizInfo.description}
           </p>
           <button
             onClick={() => setQuizStarted(true)}
-            className="bg-white mt-24 text-lg rounded-lg px-6 py-1 border-2 border-b-4 border-black"
+            className="bg-white mt-12 text-lg rounded-lg px-6 py-1 border-2 border-b-4 border-black"
           >
-            Start Quiz
+            Start Quiz {">"}
           </button>
         </main>
       </div>
@@ -120,26 +134,34 @@ export default function Page() {
   }
 
   return (
-    <div>
-      <AppNavBar name="Quiz" />
-      <main className="h-screen p-24 py-8 mx-auto w-full max-w-3xl">
+    <div className="bg-white h-screen ">
+      <section className="flex justify-between bg-zinc-900 text-white py-4 px-4">
+        <Link href={"/quiz"} className="text-xl ">
+          {"<"} Back
+        </Link>
+        <section className="text-right text-xl flex gap-8 ">
+          <p className="tracking-tighter">{quizData.quizInfo.title}</p>
+          <p>
+            {count + 1}/{amountOfQuestions}
+          </p>
+        </section>
+      </section>
+      <main className=" p-24 py-8 mx-auto w-full max-w-3xl">
         <div className="">
           {/* <p>
             selected : {selected} , answer : {answer} , button : , score :
             {score} , selected Button :{selectedButton}
           </p> */}
-          <p className="text-right text-xl mb-2">
-            {count + 1}/{amountOfQuestions}
-          </p>
+
           <Image
-            className=" rounded-xl w-full"
-            src={quizData[count].img}
+            className="w-full px-12 "
+            src={quizData.quizQuestions[count].img}
             alt="Quiz Image"
-            width={500}
-            height={500}
+            width={400}
+            height={400}
           />
-          <p className="pt-8 pb-8 text-3xl tracking-tighter   ">
-            {quizData[count].question}
+          <p className="pt-2 pb-8 text-3xl tracking-tighter  text-center  ">
+            {quizData.quizQuestions[count].question}
           </p>
 
           <div className="space-y-4 mt-4 noto-jp text-3xl">
@@ -199,7 +221,7 @@ export default function Page() {
             </button>
           </div>
 
-          <section className="flex justify-between mt-4">
+          <section className="flex justify-between mt-8">
             <button
               onClick={checkAnswer}
               className={`= border-2 border-b-4 border-black  font-bold tracking-tighter text-xl px-8 py-1 rounded-lg`}

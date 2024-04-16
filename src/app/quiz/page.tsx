@@ -1,6 +1,7 @@
 import React from "react";
 import AppNavBar from "../components/AppNavBar";
 import Link from "next/link";
+import Image from "next/image";
 
 type quiz = {
   img?: string;
@@ -8,48 +9,56 @@ type quiz = {
   desc: string;
   link: string;
 };
+
 export default function page() {
   return (
-    <div className="">
-      <AppNavBar name="Quiz" />
-      {/* <div className="py-20 bg-indigo-500 border-b-2 text-center text-7xl border-black">
-        <h1 className="max-w-4xl mx-auto">
-          Test your knowledge and see how far you have come !{" "}
-        </h1>
-      </div> */}
-      <main className="mt-8">
-        <ul className="grid grid-cols-3 max-w-6xl mx-auto gap-8">
-          <Quiz
+    <div className="bg-pink-300">
+      <AppNavBar name="quiz" />
+      <div className="absolute top-0 w-full pointer-events-none ">
+        <div className="relative h-[500px] w-full ">
+          <Image
+            src={"/assets/images/layered-peaks.svg"}
+            alt=""
+            fill
+            className="object-cover opacity-60"
+          />
+        </div>
+      </div>
+      <h1 className="text-8xl font-bold text-center max-w-7xl mx-auto mt-12 ">
+        Quizes
+      </h1>
+      <main className="mt-24 h-screen  max-w-7xl mx-auto rounded-3xl z-20">
+        <ul className="grid grid-cols-3 gap-8 ">
+          <Item
             name="Common Things 1"
             desc="Begginer level quiz for common things you might see everyday"
-            link="common-items"
+            link="common-things-1"
           />
-          <Quiz
+          <Item
             name="Common Things 2"
             desc="Intermediate level quiz of common things you might see every day"
             link="common-things-2"
           />
-          <Quiz name="Food 1" desc="Can you name these foods ?" link="food-1" />
+          <Item name="Food 1" desc="Can you name these foods ?" link="food-1" />
         </ul>
       </main>
     </div>
   );
 }
 
-const Quiz = (props: quiz) => {
+const Item = (props: quiz) => {
   const { name, desc, img, link } = props;
   return (
-    <div className="border-2 border-b-4 bg-white border-black rounded-xl p-4">
-      <section className="p-20 text-indigo-500 bg-indigo-500 border-2 border-black rounded-xl">
-        f
-      </section>
-      <h1 className="font-bold text-lg mt-2"> {name} </h1>
-      <p className="text-sm">
+    <div className=" p-8 text-center bg-white shadow-md  hover:shadow-[8px_8px_0px_rgba(0,0,0,1)] transition-all duration-300  border-black  rounded-3xl   ">
+      <h1 className=" text-3xl tracking-tighter  rounded-t-3xl "> {name} </h1>
+
+      <section className="p-20  rounded-xl"></section>
+      <p className=" mb-4 ">
         Test yourself to see if you remember these common items !
       </p>
       <Link href={`/quiz/${link}`}>
-        <button className="mt-4  rounded-xl border-2 border-b-4 border-black bg-white w-full py-1">
-          Play
+        <button className="mt-4 font-bold border-black bg-pink-400 border-2   hover:shadow-[4px_4px_0px_rgba(0,0,0,1)] rounded-xl  mb-4   w-full py-1">
+          Take Quiz {">"}
         </button>
       </Link>
     </div>

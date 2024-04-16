@@ -33,46 +33,70 @@ export const posts: Post[] = [
   },
 ];
 
+type Item = {
+  name: string;
+  images?: string;
+};
+
 export default function page() {
   return (
-    <div className="bg-white">
-      <AppNavBar name="Learn" />
-      <p className="text-5xl font-semibold tracking-tighter  mt-12 ml-8">
+    <div className=" bg-orange-300 ">
+      <AppNavBar name="learn" />
+      <p className="text-5xl font-semibold tracking-tighter  mt-12 ml-24">
         Welcome to the learning hub
       </p>
-      <section className="flex px-8 gap-8">
-        <div className=" py-72 bg-red-300 w-3/4  rounded-3xl  mt-12"></div>
-        <div className=" p-8 bg-green-400  w-1/4  rounded-3xl  mt-12">
-          <p className="text-2xl font-bold tracking-tighter">
-            Unlocking the Palette: Learning Colors in Japanese
-          </p>
-        </div>
-      </section>
-      <section className="mt-12 bg-orange-300 mx-8 poppins  rounded-3xl p-24 space-y-8">
-        <div className="flex gap-4">
-          <Box />
-          <Box />
+      <main className="py-4  bg-amber-500 mx-24 flex  rounded-3xl  mt-12">
+        <section className="border-r-4 gap-y-16 border-r-black flex flex-col items-end justify-end w-full">
+          <LeftItem name="What The Flip" />
+          <LeftItem name="What The Flip" />
+          <LeftItem name="What The Flip" />
 
-          <Box />
-        </div>
-        <div className="flex gap-4">
-          <Box />
-          <Box />
-          <Box />
-        </div>
+          <LeftItem name="What The Flip" />
+        </section>
+        <section className="flex flex-col gap-y-8 w-full">
+          <RightItem name="What The Flip" />
+          <RightItem name="What The Flip" />
 
-        <div className="flex gap-4">
-          <Box />
-          <Box />
+          <RightItem name="What The Flip" />
 
-          <Box />
-        </div>
-      </section>
+          <RightItem name="What The Flip" />
+
+          <RightItem name="What The Flip" />
+
+          <RightItem name="What The Flip" />
+        </section>
+
+        {/* <div className="bg-zinc-900 font-bold noto-jp  ml-4  h-8 w-8 text-white rounded-full grid place-content-center">
+          ゲ
+        </div> */}
+      </main>
       ;
     </div>
   );
 }
 
+const LeftItem = (props: Item) => {
+  const { name, images } = props;
+  return (
+    <div className="bg-zinc-800 px-4 text-center mr-16 rounded-3xl  text-white w-fit relative  py-4 ">
+      <aside className="w-16 h-1 absolute top-1/2 -right-16  bg-black"></aside>
+      <h2>{name}</h2>
+
+      <section className="flex mt-8"></section>
+    </div>
+  );
+};
+
+const RightItem = (props: Item) => {
+  const { name, images } = props;
+  return (
+    <div className="bg-zinc-800 ml-16 px-4 text-center rounded-3xl  text-white w-fit relative  py-4 ">
+      <aside className="w-16  h-1 absolute top-1/2 -left-16  bg-black"></aside>
+      <h2>{name}</h2>
+      <section className="flex mt-8 "></section>
+    </div>
+  );
+};
 const Box = () => {
   return (
     <div className="bg-white   p-4 w-1/3 rounded-2xl ">
