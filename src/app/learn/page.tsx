@@ -42,61 +42,40 @@ export default function page() {
   return (
     <div className=" bg-orange-300 ">
       <AppNavBar name="learn" />
-      <p className="text-5xl font-semibold tracking-tighter  mt-12 ml-24">
-        Welcome to the learning hub
-      </p>
-      <main className="py-4  bg-amber-500 mx-24 flex  rounded-3xl  mt-12">
-        <section className="border-r-4 gap-y-16 border-r-black flex flex-col items-end justify-end w-full">
-          <LeftItem name="What The Flip" />
-          <LeftItem name="What The Flip" />
-          <LeftItem name="What The Flip" />
-
-          <LeftItem name="What The Flip" />
-        </section>
-        <section className="flex flex-col gap-y-8 w-full">
-          <RightItem name="What The Flip" />
-          <RightItem name="What The Flip" />
-
-          <RightItem name="What The Flip" />
-
-          <RightItem name="What The Flip" />
-
-          <RightItem name="What The Flip" />
-
-          <RightItem name="What The Flip" />
-        </section>
-
-        {/* <div className="bg-zinc-900 font-bold noto-jp  ml-4  h-8 w-8 text-white rounded-full grid place-content-center">
-          ゲ
-        </div> */}
-      </main>
-      ;
+      <div className="max-w-7xl mx-auto">
+        <p className="text-5xl font-semibold tracking-tighter  mt-12"></p>
+        <main className="  space-y-8 mt-12 ">
+          <Article />
+          <Article />
+          <Article />
+          <Article />
+          <Article />
+          <Article />
+        </main>
+      </div>
     </div>
   );
 }
 
-const LeftItem = (props: Item) => {
-  const { name, images } = props;
+const Article = () => {
   return (
-    <div className="bg-zinc-800 px-4 text-center mr-16 rounded-3xl  text-white w-fit relative  py-4 ">
-      <aside className="w-16 h-1 absolute top-1/2 -right-16  bg-black"></aside>
-      <h2>{name}</h2>
+    <div className="   p-8  bg-orange-400 rounded-3xl flex justify-between  ">
+      <section className="">
+        <h2 className=" text-3xl font-bold tracking-tighter">
+          What the heck are these colors anyway ?
+        </h2>
 
-      <section className="flex mt-8"></section>
+        <p className="text-lg mt-3">
+          Get and intro into the different japanese colors.{" "}
+        </p>
+      </section>
+      <Link href={"/learn/2"} className="underline underline-offset-2 self-end">
+        Read More
+      </Link>
     </div>
   );
 };
 
-const RightItem = (props: Item) => {
-  const { name, images } = props;
-  return (
-    <div className="bg-zinc-800 ml-16 px-4 text-center rounded-3xl  text-white w-fit relative  py-4 ">
-      <aside className="w-16  h-1 absolute top-1/2 -left-16  bg-black"></aside>
-      <h2>{name}</h2>
-      <section className="flex mt-8 "></section>
-    </div>
-  );
-};
 const Box = () => {
   return (
     <div className="bg-white   p-4 w-1/3 rounded-2xl ">

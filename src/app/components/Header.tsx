@@ -44,7 +44,7 @@ export default function Header() {
 
 const Card1 = () => {
   return (
-    <section className=" relative   z-10 py-24    max-w-7xl  rounded-3xl bg-pink-200   mx-auto   border-black    px-24 ">
+    <section className=" relative   z-10 py-24    max-w-7xl  rounded-3xl bg-white   mx-auto   border-black    px-24 ">
       <div className="absolute right-48 top-24 py-24 px-24 bg-green-500 -z-10 rounded-full "></div>
 
       <div className="absolute right-24 top-24 py-24 px-24 bg-red-500 -z-10 rounded-full "></div>

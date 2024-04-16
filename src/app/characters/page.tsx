@@ -15,7 +15,7 @@ export default function Page() {
     setActive(pageNumber);
   };
   return (
-    <div className="bg-pink-200">
+    <div className="">
       <AppNavBar name="characters" />
 
       {/* <div className="absolute top-0 w-full  ">

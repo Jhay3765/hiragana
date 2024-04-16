@@ -26,6 +26,8 @@ body {
   font-family: "Poppins", sans-serif;
 
   /* Begin The Redundancies */
+}
+.save {
   background-image: -webkit-linear-gradient(
       0deg,
       transparent 5em,

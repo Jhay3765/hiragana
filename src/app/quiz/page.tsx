@@ -12,18 +12,16 @@ type quiz = {
 
 export default function page() {
   return (
-    <div className="bg-pink-300">
+    <div className="relative">
       <AppNavBar name="quiz" />
-      <div className="absolute top-0 w-full pointer-events-none ">
-        <div className="relative h-[500px] w-full ">
-          <Image
-            src={"/assets/images/layered-peaks.svg"}
-            alt=""
-            fill
-            className="object-cover opacity-60"
-          />
-        </div>
-      </div>
+
+      {/* <Image
+        src={"/assets/images/wave.svg"}
+        alt=""
+        fill
+        className="w-full  absolute top-0 rotate-180 -z-10 "
+      /> */}
+
       <h1 className="text-8xl font-bold text-center max-w-7xl mx-auto mt-12 ">
         Quizes
       </h1>
@@ -49,7 +47,7 @@ export default function page() {
 const Item = (props: quiz) => {
   const { name, desc, img, link } = props;
   return (
-    <div className=" p-8 text-center bg-white shadow-md  hover:shadow-[8px_8px_0px_rgba(0,0,0,1)] transition-all duration-300  border-black  rounded-3xl   ">
+    <div className=" p-8 text-center bg-orange-200 shadow-md  hover:shadow-[8px_8px_0px_rgba(0,0,0,1)] transition-all duration-300  border-black  rounded-3xl   ">
       <h1 className=" text-3xl tracking-tighter  rounded-t-3xl "> {name} </h1>
 
       <section className="p-20  rounded-xl"></section>
@@ -57,7 +55,7 @@ const Item = (props: quiz) => {
         Test yourself to see if you remember these common items !
       </p>
       <Link href={`/quiz/${link}`}>
-        <button className="mt-4 font-bold border-black bg-pink-400 border-2   hover:shadow-[4px_4px_0px_rgba(0,0,0,1)] rounded-xl  mb-4   w-full py-1">
+        <button className="mt-4 font-bold border-black bg-orange-400 border-2   hover:shadow-[4px_4px_0px_rgba(0,0,0,1)] rounded-xl  mb-4   w-full py-1">
           Take Quiz {">"}
         </button>
       </Link>

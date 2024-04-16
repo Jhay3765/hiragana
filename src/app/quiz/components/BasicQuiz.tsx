@@ -106,7 +106,7 @@ export default function BasicQuiz(props: any) {
 
   if (!quizStarted) {
     return (
-      <div className="bg-white">
+      <div className="">
         <section className="flex justify-between bg-zinc-900 text-white py-4 px-4">
           <Link href={"/quiz"} className="text-xl ">
             {"<"} Back
@@ -124,9 +124,9 @@ export default function BasicQuiz(props: any) {
           </p>
           <button
             onClick={() => setQuizStarted(true)}
-            className="bg-white mt-12 text-lg rounded-lg px-6 py-1 border-2 border-b-4 border-black"
+            className="bg-orange-100 mt-12 text-lg rounded-lg px-6 py-1 border-2 border-b-4 border-black"
           >
-            Start Quiz {">"}
+            Start Quiz
           </button>
         </main>
       </div>
@@ -134,13 +134,15 @@ export default function BasicQuiz(props: any) {
   }
 
   return (
-    <div className="bg-white h-screen ">
-      <section className="flex justify-between bg-zinc-900 text-white py-4 px-4">
+    <div className=" h-screen ">
+      <section className="flex  justify-between bg-zinc-900 text-white py-4 px-4">
         <Link href={"/quiz"} className="text-xl ">
           {"<"} Back
         </Link>
         <section className="text-right text-xl flex gap-8 ">
-          <p className="tracking-tighter">{quizData.quizInfo.title}</p>
+          <p className="tracking-tighter font-bold">
+            {quizData.quizInfo.title}
+          </p>
           <p>
             {count + 1}/{amountOfQuestions}
           </p>
@@ -174,7 +176,7 @@ export default function BasicQuiz(props: any) {
               ${answer === choices[0] && wrong ? "bg-green-500" : ""}
 
 
-                  text-xl w-full border-2 rounded-lg text-center border-b-4 py-2 border-black cursor-pointer`}
+                  text-xl w-full border-2 rounded-lg text-center border-b-4 py-2  border-black cursor-pointer`}
             >
               {choices[0]}
             </button>
@@ -234,7 +236,7 @@ export default function BasicQuiz(props: any) {
               className={`${
                 correct || wrong
                   ? "border-black text-black bg-teal-500"
-                  : "text-gray-500"
+                  : "text-zinc-500 border-zinc-500"
               }  border-2 border-b-4   font-bold tracking-tighter text-xl px-8 py-1 rounded-lg`}
             >
               Next

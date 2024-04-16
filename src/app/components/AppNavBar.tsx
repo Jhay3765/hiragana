@@ -11,13 +11,13 @@ export default function AppNavBar(props: Page) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="max-w-7xl mx-auto   pt-4 flex   sticky top-0   items-center justify-between  z-20">
-      <nav className=" max-w-7xl mx-auto rounded-full py-2 flex justify-between text-white bg-zinc-800 w-full px-12">
+    <div className="max-w-7xl mx-auto z-40   pt-4 flex      items-center justify-between  ">
+      <nav className=" max-w-7xl mx-auto rounded-full py-3 flex justify-between text-white bg-zinc-800 w-full px-12">
         <Link
           href={"/"}
           className="tracking-tighter font-bold   noto-jp cursor-pointer text-2xl   flex gap-1 items-center"
         >
-          ゲームや楽しい <span className="text-yellow-500">記</span>
+          ゲームや楽しい <span className="text-orange-500">記</span>
         </Link>
         <section className="flex items-center gap-20">
           <ul className="flex gap-6 text-xl items-center">
@@ -25,7 +25,7 @@ export default function AppNavBar(props: Page) {
               href={"/"}
               className={`${
                 props.name === "home"
-                  ? "bg-yellow-500 text-black px-6 py-2 font-bold"
+                  ? "bg-orange-500 text-black px-6 py-2 font-bold"
                   : ""
               } tracking-tighter rounded-full`}
             >
@@ -55,7 +55,7 @@ export default function AppNavBar(props: Page) {
               href={"/quiz"}
               className={`${
                 props.name === "quiz"
-                  ? "bg-pink-500 text-black px-6 py-2 font-bold"
+                  ? "bg-orange-400 text-black px-6 py-2 font-bold"
                   : ""
               } tracking-tighter rounded-full`}
             >
@@ -65,7 +65,7 @@ export default function AppNavBar(props: Page) {
               href={"/characters"}
               className={`${
                 props.name === "characters"
-                  ? "bg-pink-500 text-black px-6 py-2 font-bold"
+                  ? "bg-orange-400 text-black px-6 py-2 font-bold"
                   : ""
               } tracking-tighter  rounded-full`}
             >

@@ -3,7 +3,7 @@ import React from "react";
 
 export default function page() {
   return (
-    <div className="bg-white">
+    <div className="">
       <AppNavBar name="learn" />
       <main className="max-w-7xl mt-24 mx-auto">
         <div className="space-y-4 max-w-prose text-lg ">
