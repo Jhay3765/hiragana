@@ -67,7 +67,7 @@ export function KatakanaSheet() {
 
 export const KanjiChart = () => {
   return (
-    <div className=" grid grid-cols-4 py-10 gap-4  max-w-xl  ">
+    <div className=" grid grid-cols-4 py-10 gap-4    ">
       {kanjiChart.map((data, index) => {
         return (
           <Character key={index} name={data.kanji} english={data.meaning} />
@@ -83,7 +83,7 @@ function Character(props: Hiragana) {
   const { name, english } = props;
 
   return (
-    <div className="bg-orange-100 py-4 border-2 border-orange-100 hover:border-black   px-3 text-center cursor-pointer  rounded-xl transition-all duration-200   hover:bg-orange-400">
+    <div className="bg-orange-100 py-4  border-orange-100   px-3 text-center cursor-pointer  rounded-xl transition-all duration-200   hover:bg-orange-400">
       <p className="text-2xl font-semibold noto-jp whitespace-nowrap tracking-tighter ">
         {name}
       </p>

@@ -10,7 +10,7 @@ export default function BasicQuiz(props: any) {
   const quizData = props.quizData;
   const amountOfQuestions = quizData.quizQuestions.length; // Number of questions in the array
   const shuffledNumbers = shuffleNumbers(123);
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState<null | string>(null);
   const [wrong, setWrong] = useState(false);
   const [correct, setCorrect] = useState(false);
   const [selectedButton, setSelectedButton] = useState<null | number>(null);
@@ -21,7 +21,7 @@ export default function BasicQuiz(props: any) {
 
   const restart = () => {
     setCount(0);
-    setSelected("");
+    setSelected(null);
     setCorrect(false);
     setWrong(false);
     setSelectedButton(null);
@@ -83,12 +83,14 @@ export default function BasicQuiz(props: any) {
   };
 
   const checkAnswer = () => {
+    if (!selected) return;
     if (selected === answer) {
       setCorrect(true);
       setScore(score + 1);
       return;
     }
     if (selected !== answer) {
+      selected;
       setWrong(true);
       return;
     }
@@ -134,7 +136,7 @@ export default function BasicQuiz(props: any) {
   }
 
   return (
-    <div className=" h-screen ">
+    <div className=" h-screen bg-white ">
       <section className="flex  justify-between bg-zinc-900 text-white py-4 px-4">
         <Link href={"/quiz"} className="text-xl ">
           {"<"} Back
