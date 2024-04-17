@@ -83,7 +83,7 @@ function Character(props: Hiragana) {
   const { name, english } = props;
 
   return (
-    <div className="bg-white py-4 border-2 border-white hover:border-black   px-3 text-center cursor-pointer  rounded-xl transition-all duration-200   hover:bg-orange-400">
+    <div className="bg-orange-100 py-4 border-2 border-orange-100 hover:border-black   px-3 text-center cursor-pointer  rounded-xl transition-all duration-200   hover:bg-orange-400">
       <p className="text-2xl font-semibold noto-jp whitespace-nowrap tracking-tighter ">
         {name}
       </p>

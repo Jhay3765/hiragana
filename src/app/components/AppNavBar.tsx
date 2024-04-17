@@ -12,7 +12,7 @@ export default function AppNavBar(props: Page) {
 
   return (
     <div className="max-w-7xl mx-auto z-40   pt-4 flex      items-center justify-between  ">
-      <nav className=" max-w-7xl mx-auto rounded-full py-3 flex justify-between text-white bg-zinc-800 w-full px-12">
+      <nav className=" max-w-7xl mx-auto rounded-full py-3 flex justify-between text-orange-100 bg-zinc-900 w-full px-12">
         <Link
           href={"/"}
           className="tracking-tighter font-bold   noto-jp cursor-pointer text-2xl   flex gap-1 items-center"

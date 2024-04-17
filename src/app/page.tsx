@@ -7,7 +7,7 @@ export default function Home() {
     <div className="bg-orange-300   ">
       <AppNavBar name="home" />
       <main className="relative pt-24">
-        <div className="pb-48  max-w-7xl mt-24   flex justify-between  gap-8 mx-auto ">
+        <div className="pb-24  max-w-7xl mt-24   flex justify-between  gap-8 mx-auto ">
           <section className="z-20">
             <h1 className="font-bold   text-8xl tracking-tighter ">
               theJapanese<span className="text-orange-600">Spot</span>
@@ -23,13 +23,6 @@ export default function Home() {
             alt=" "
             width={700}
             height={700}
-          ></Image>
-          <Image
-            src={"/assets/images/wave.svg"}
-            alt=" "
-            height={100}
-            width={200}
-            className="absolute w-full bottom-0 left-0 z-10 pointer-events-none"
           ></Image>
 
           {/* <div className=" border-black  flex w-full mt-8 mb-10 gap-4 max-w-7xl mx-auto poppins">
@@ -55,8 +48,6 @@ export default function Home() {
         </div> */}
         </div>
       </main>
-
-      <div className=" bg-orange-600 h-48"></div>
 
       {/* <section className=" bg-white poppins">
         <div className="max-w-5xl mx-auto  border-black  ">

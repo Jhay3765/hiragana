@@ -12,7 +12,7 @@ type quiz = {
 
 export default function page() {
   return (
-    <div className="relative">
+    <div className="relative mb-12">
       <AppNavBar name="quiz" />
 
       {/* <Image
@@ -25,7 +25,7 @@ export default function page() {
       <h1 className="text-8xl font-bold text-center max-w-7xl mx-auto mt-12 ">
         Quizes
       </h1>
-      <main className="mt-24 h-screen  max-w-7xl mx-auto rounded-3xl z-20">
+      <main className="mt-24   max-w-7xl mx-auto rounded-3xl z-20">
         <ul className="grid grid-cols-3 gap-8 ">
           <Item
             name="Common Things 1"

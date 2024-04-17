@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-
+import Footer from "./components/Footer";
 import "./globals.css";
 
 import "@fontsource/poppins/200.css";
@@ -25,7 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="text-zinc-900 bg-orange-300">{children}</body>
+      <body className="text-zinc-900 bg-orange-300">
+        {children} <Footer />
+      </body>
     </html>
   );
 }

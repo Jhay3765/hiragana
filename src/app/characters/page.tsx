@@ -34,9 +34,9 @@ export default function Page() {
             onClick={() => handleClick(0)}
             className={`${
               active === 0
-                ? "border-black font-semibold"
-                : "border-transparent text-zinc-400"
-            } bg-white border-2  rounded-xl px-4 py-2 w-full `}
+                ? "font-semibold bg-orange-400"
+                : " text-zinc-500 bg-orange-100"
+            }   rounded-xl px-4 py-2 w-full `}
           >
             Hiragana
           </button>
@@ -44,9 +44,9 @@ export default function Page() {
             onClick={() => handleClick(1)}
             className={`${
               active === 1
-                ? "border-black font-semibold"
-                : "border-transparent text-zinc-400"
-            } bg-white border-2  rounded-xl px-4 py-2 w-full `}
+                ? "border-black font-semibold bg-orange-400"
+                : " text-zinc-500 bg-orange-100"
+            }   rounded-xl px-5 py-2 w-full `}
           >
             Katakana
           </button>
@@ -54,9 +54,9 @@ export default function Page() {
             onClick={() => handleClick(2)}
             className={`${
               active === 2
-                ? "border-black font-semibold"
-                : "border-transparent text-zinc-400"
-            } bg-white border-2  rounded-xl px-4 py-2 w-full `}
+                ? "border-black font-semibold bg-orange-400"
+                : " text-zinc-500 bg-orange-100"
+            }   rounded-xl px-4 py-2 w-full `}
           >
             Kanji
           </button>
