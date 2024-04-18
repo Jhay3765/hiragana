@@ -13,9 +13,9 @@ import "@fontsource-variable/lexend-mega";
 import "@fontsource-variable/public-sans";
 import "@fontsource-variable/noto-sans-jp";
 export const metadata: Metadata = {
-  title: "HiraganaMastery",
+  title: "theJapaneseSpot",
   description:
-    "Your #1 Hiragana learning tool - Completely for free. Learn at your own pace with games and fun articles!",
+    "Your Japanese learning tool - Completely for free. Learn at your own pace with quizes and fun articles!",
 };
 
 export default function RootLayout({
