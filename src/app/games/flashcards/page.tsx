@@ -1,6 +1,6 @@
 "use client";
 import AppNavBar from "@/app/components/AppNavBar";
-import GameNav from "@/app/components/GameNav";
+
 import React, { useState, useEffect } from "react";
 
 const hiraganaCharacters = [

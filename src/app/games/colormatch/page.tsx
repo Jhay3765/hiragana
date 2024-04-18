@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Head from "next/head";
+import React, { useState } from "react";
+
 import AppNavBar from "@/app/components/AppNavBar";
 import Link from "next/link";
 interface ColorOption {
