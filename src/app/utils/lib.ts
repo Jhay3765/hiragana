@@ -4,7 +4,6 @@ export function shuffleNumbers(seed: number): number[] {
   // Use a deterministic random number generator based on seed
   const random = (max: number) => Math.floor(seed * max) % max;
 
-  // Fisher-Yates shuffle algorithm
   for (let i = numbers.length - 1; i > 0; i--) {
     const j = random(i + 1);
     [numbers[i], numbers[j]] = [numbers[j], numbers[i]];

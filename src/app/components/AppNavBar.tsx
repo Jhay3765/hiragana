@@ -2,7 +2,10 @@
 import React from "react";
 import { useState } from "react";
 import Link from "next/link";
+import menu from "/public/assets/main/menu.svg";
+import cross from "/public/assets/main/cross.svg";
 
+import Image from "next/image";
 type Page = {
   name: string;
 };
@@ -10,27 +13,39 @@ type Page = {
 export default function AppNavBar(props: Page) {
   const [open, setOpen] = useState(false);
 
+  const closeMenu = () => {
+    setOpen(false);
+  };
+
   return (
-    <div className="max-w-7xl mx-auto z-40   pt-4 flex      items-center justify-between  ">
-      <nav className=" max-w-7xl mx-auto rounded-full py-3 flex justify-between text-orange-100 bg-zinc-900 w-full px-12">
+    <div className="max-w-7xl md:mx-auto z-40 md:pt-4 flex items-center justify-between  ">
+      <nav className=" max-w-7xl mx-auto md:rounded-full py-3 flex justify-between text-orange-100 bg-zinc-900 w-full px-4   md:px-12">
         <Link
           href={"/"}
-          className="tracking-tighter font-bold   noto-jp cursor-pointer text-2xl   flex gap-1 items-center"
+          className="tracking-tighter font-bold    noto-jp cursor-pointer text-md  md:text-2xl   flex gap-1 items-center"
         >
           ゲームや楽しい <span className="text-orange-500">記</span>
         </Link>
         <section className="flex items-center gap-20">
-          <ul className="flex gap-6 text-xl items-center">
+          <Image
+            onClick={() => setOpen(true)}
+            src={menu}
+            alt=""
+            width={40}
+            className="md:hidden cursor-pointer"
+          />
+          <ul className="md:flex hidden  gap-6 text-xl items-center">
             <Link
               href={"/"}
               className={`${
                 props.name === "home"
-                  ? "bg-orange-500 text-black px-6 py-2 font-bold"
+                  ? "bg-orange-400 text-black px-6 py-2 font-bold"
                   : ""
               } tracking-tighter rounded-full`}
             >
               Home
             </Link>
+
             {/* <Link
               href={"/games"}
               className={`${
@@ -74,6 +89,53 @@ export default function AppNavBar(props: Page) {
           </ul>
         </section>
       </nav>
+      {open && <MobileMenu closeMenu={closeMenu} />}
     </div>
   );
 }
+
+const MobileMenu = (props: any) => {
+  return (
+    <div className="fixed bg-zinc-900 md:hidden top-0 h-screen  p-8 w-full z-30">
+      <div className="w-full flex justify-end">
+        <Image
+          onClick={props.closeMenu}
+          src={cross}
+          alt=""
+          width={30}
+          className="mb-8 cursor-pointer"
+        />
+      </div>
+      <ul className="text-4xl sm:text-5xl font-bold text-orange-400 z-40 flex flex-col gap-6 w-fit">
+        <Link
+          onClick={props.closeMenu}
+          className="hover:text-orange-100 transition-all duration-300"
+          href={"/"}
+        >
+          Home
+        </Link>
+        <Link
+          onClick={props.closeMenu}
+          className="hover:text-orange-100 transition-all duration-300"
+          href={"/learn"}
+        >
+          Learn
+        </Link>
+        <Link
+          onClick={props.closeMenu}
+          className="hover:text-orange-100 transition-all duration-300"
+          href={"/quiz"}
+        >
+          Quiz
+        </Link>
+        <Link
+          onClick={props.closeMenu}
+          className="hover:text-orange-100 transition-all duration-300"
+          href={"/characters"}
+        >
+          Characters
+        </Link>
+      </ul>
+    </div>
+  );
+};

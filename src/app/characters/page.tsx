@@ -29,12 +29,12 @@ export default function Page() {
           </div>
         </div> */}
       <section className="flex flex-col items-center justify-center max-w-3xl z-40 mx-auto">
-        <ul className="flex pt-8 gap-4 text-xl text-center ">
+        <ul className="flex flex-wrap md:flex-nowrap pt-8 gap-4 text-base sm:text-xl text-center ">
           <button
             onClick={() => handleClick(0)}
             className={`${
               active === 0
-                ? "font-semibold bg-orange-400"
+                ? "font-semibold bg-orange-400 shadow-[2px_2px_0px_rgba(0,0,0,1)]"
                 : " text-zinc-500 bg-orange-100"
             }   rounded-xl px-4 py-2 w-full `}
           >
@@ -44,7 +44,7 @@ export default function Page() {
             onClick={() => handleClick(1)}
             className={`${
               active === 1
-                ? "border-black font-semibold bg-orange-400"
+                ? "border-black font-semibold bg-orange-400 shadow-[2px_2px_0px_rgba(0,0,0,1)]"
                 : " text-zinc-500 bg-orange-100"
             }   rounded-xl px-5 py-2 w-full `}
           >
@@ -54,7 +54,7 @@ export default function Page() {
             onClick={() => handleClick(2)}
             className={`${
               active === 2
-                ? "border-black font-semibold bg-orange-400"
+                ? "border-black font-semibold bg-orange-400 shadow-[2px_2px_0px_rgba(0,0,0,1)]"
                 : " text-zinc-500 bg-orange-100"
             }   rounded-xl px-4 py-2 w-full `}
           >

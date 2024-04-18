@@ -13,23 +13,9 @@ export interface Post {
 export const posts: Post[] = [
   {
     id: 1,
-    title: "Introduction to Tailwind CSS",
-    excerpt: "Learn the basics of Tailwind CSS and how to get started with it.",
-    slug: "introduction-to-tailwind-css",
-  },
-  {
-    id: 2,
-    title: "Building Responsive Layouts with Next.js",
-    excerpt:
-      "Discover how to create responsive layouts in Next.js using Tailwind CSS.",
-    slug: "building-responsive-layouts-with-nextjs",
-  },
-  {
-    id: 3,
-    title: "Optimizing Performance in React Applications",
-    excerpt:
-      "Explore strategies for improving performance in React applications.",
-    slug: "optimizing-performance-in-react-applications",
+    title: "What the heck are these colors anyway",
+    excerpt: "Get an intro into the different japanese colors.",
+    slug: "introduction-to-japanese-colors",
   },
 ];
 
@@ -40,60 +26,67 @@ type Item = {
 
 export default function page() {
   return (
-    <div className=" bg-orange-300 ">
+    <div className=" bg-orange-300 min-h-screen">
       <AppNavBar name="learn" />
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-2">
         <p className="text-5xl font-semibold tracking-tighter  mt-12"></p>
-        <main className="  space-y-8 mt-12 ">
-          <Article />
-          <Article />
-          <Article />
-          <Article />
-          <Article />
-          <Article />
+        <main className="space-y-8 mt-12 ">
+          {posts.map((post, index) => {
+            return (
+              <Article
+                title={post.title}
+                excerpt={post.excerpt}
+                id={post.id}
+                slug={post.slug}
+                key={index}
+              />
+            );
+          })}
         </main>
       </div>
     </div>
   );
 }
 
-const Article = () => {
+const Article = (props: Post) => {
   return (
-    <div className="   p-8  bg-orange-400 rounded-3xl flex justify-between  ">
+    <Link
+      href={`/learn/${props.slug}`}
+      className=" hover:bg-orange-500 transition-all duration-300  p-6  bg-orange-400 rounded-3xl flex flex-col md:flex-row justify-between  "
+    >
       <section className="">
-        <h2 className=" text-3xl font-bold tracking-tighter">
-          What the heck are these colors anyway ?
+        <h2 className="text-xl md:text-3xl font-bold tracking-tighter">
+          {props.title}
         </h2>
 
-        <p className="text-lg mt-3">
-          Get and intro into the different japanese colors.{" "}
+        <p className="md:text-lg text-sm text-zinc-800 md:mt-4">
+          {props.excerpt}
         </p>
       </section>
-      <Link href={"/learn/2"} className="underline underline-offset-2 self-end">
+      <div className="underline underline-offset-2 text-xs md:text-base self-end hover:font-bold ">
         Read More
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 
-const Box = () => {
+const Pagination = () => {
   return (
-    <div className="bg-white   p-4 w-1/3 rounded-2xl ">
-      <img
-        className=" border-2 border-black  rounded-2xl"
-        src="/assets/hir.jpg"
-        alt=""
-      />
-      <h1 className="font-bold text-2xl mt-2 tracking-tighter">
-        The Art of Hiragana
-      </h1>
-      <p className="mt-5  text-zinc-700">
-        {" "}
-        Explore the birth of groundbreaking ideas and inventions.{" "}
-      </p>
-      <Link href={"/learn/2"} className="underline text-right text-sm mt-10">
-        Read More
-      </Link>
+    <div className="flex justify-center mt-8">
+      {/* Previous Button */}
+      <a
+        href="#"
+        className="flex items-center justify-center px-4 h-10 text-base font-medium border-2 border-black "
+      >
+        Previous
+      </a>
+      {/* Next Button */}
+      <a
+        href="#"
+        className="flex items-center justify-center px-4 h-10 ms-3 text-base font-medium border-2 border-black"
+      >
+        Next
+      </a>
     </div>
   );
 };

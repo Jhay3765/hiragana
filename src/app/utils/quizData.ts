@@ -174,3 +174,211 @@ export const commonThingsQuiz2 = {
     },
   ],
 };
+
+export const foodQuiz = {
+  quizInfo: {
+    title: "Japanese Food Quiz",
+    description:
+      "Test your knowledge of various foods with Japanese Food Quiz! This interactive quiz game challenges players to identify different food items based on images and their Japanese names. From fruits and vegetables to snacks and desserts, players will put their Japanese food vocabulary to the test. To play, simply click 'Start Quiz' and begin answering questions. Each question presents an image of a food item along with multiple-choice options in Japanese. Choose the correct answer by clicking on the corresponding button.",
+  },
+  quizQuestions: [
+    {
+      question: "What is this fruit in Japanese?",
+      img: "/assets/quiz/Apple.svg",
+      choices: ["りんご", "バナナ", "オレンジ", "ぶどう"],
+      correctAnswer: "りんご", // Apple
+    },
+    {
+      question: "What is this vegetable in Japanese?",
+      img: "/assets/quiz/Carrot.svg",
+      choices: ["にんじん", "ブロッコリー", "トマト", "きゅうり"],
+      correctAnswer: "にんじん", // Carrot
+    },
+    {
+      question: "How do you say bread in Japanese?",
+      img: "/assets/quiz/Bread.svg",
+      choices: ["やさい", "ぱん", "にく", "たまご"],
+      correctAnswer: "ぱん", // ぱん (Bread)
+    },
+
+    {
+      question: "How do you say tea in Japanese?",
+      img: "/assets/quiz/Tea.svg",
+      choices: ["おちゃ", "こーひー", "じゅーす", "みず"],
+      correctAnswer: "おちゃ", // Tea
+    },
+
+    {
+      question: "What is this vegetable in Japanese?",
+      img: "/assets/quiz/Corn.svg",
+      choices: ["とうもろこし", "アーティチョーク", "ネギ", "オクラ"],
+      correctAnswer: "とうもろこし", // Corn
+    },
+    {
+      question: "What is this fruit in Japanese?",
+      img: "/assets/quiz/Strawberry.svg",
+      choices: ["いちご", "ばなな", "みかん", "ぶどう"],
+      correctAnswer: "いちご", // Strawberry
+    },
+    {
+      question: "What is this item in Japanese?",
+      img: "/assets/quiz/Bento.svg",
+      choices: ["おにぎり", "べんとう", "おでん", "すし"],
+      correctAnswer: "べんとう", // Bentou (Box Lunch)
+    },
+    {
+      question: "How do you say sushi in Japanese?",
+      img: "/assets/quiz/Sushi.svg",
+      choices: ["おにぎり", "べんとう", "おでん", "すし"],
+      correctAnswer: "すし", // すし (Sushi)
+    },
+    {
+      question: "How do you say eel in Japanese?",
+      img: "/assets/quiz/Eel.svg",
+      choices: ["ほたて", "さけ", "うなぎ", "たい"],
+      correctAnswer: "うなぎ", // うなぎ (Eel)
+    },
+    {
+      question: "How do you say Ramen in Japanese?",
+      img: "/assets/quiz/Ramen.svg",
+      choices: ["そば", "うどん", "ラーメン", "おにぎり"],
+      correctAnswer: "ラーメン", // ラーメン (Ramen)
+    },
+    {
+      question: "How do you say fish in Japanese?",
+      img: "/assets/quiz/Fish2.svg",
+      choices: ["さかな", "にく", "やさい", "ごはん"],
+      correctAnswer: "さかな", // さかな (Fish)
+    },
+    {
+      question: "How do you say egg in Japanese?",
+      img: "/assets/quiz/Egg.svg",
+      choices: ["おやつ", "ごはん", "たまご", "やさい"],
+      correctAnswer: "たまご", // たまご (Egg)
+    },
+    {
+      question: "How do you say salt in Japanese?",
+      img: "/assets/quiz/Salt.svg",
+      choices: ["みず", "あげる", "しお", "さとう"],
+      correctAnswer: "しお", // しお (Salt)
+    },
+    {
+      question: "How do you say watermelon in Japanese?",
+      img: "/assets/quiz/watermelon.svg",
+      choices: ["すいか", "なす", "きゅうり", "れんこん"],
+      correctAnswer: "すいか", // すいか (Watermelon)
+    },
+    {
+      question: "How do you say potato in Japanese?",
+      img: "/assets/quiz/potato.svg",
+      choices: ["たまねぎ", "じゃがいも", "にんじん", "れんこん"],
+      correctAnswer: "じゃがいも", // じゃがいも (Potato)
+    },
+  ],
+};
+
+export const foodQuizJapanese2 = {
+  quizInfo: {
+    title: "Japanese Food Quiz",
+    description:
+      "Test your knowledge of various foods with Japanese Food Quiz! This interactive quiz game challenges players to identify different food items based on images and their Japanese names. From fruits and vegetables to snacks and desserts, players will put their Japanese food vocabulary to the test. To play, simply click 'Start Quiz' and begin answering questions. Each question presents an image of a food item along with multiple-choice options in Japanese. Choose the correct answer by clicking on the corresponding button.",
+  },
+  quizQuestions: [
+    {
+      question: "What is this fruit in Japanese?",
+      img: "/assets/quiz/Fruit1.svg",
+      choices: ["りんご", "バナナ", "オレンジ", "ぶどう"],
+      correctAnswer: "りんご", // Apple
+    },
+    {
+      question: "What is this vegetable in Japanese?",
+      img: "/assets/quiz/Vegetable1.svg",
+      choices: ["にんじん", "ブロッコリー", "トマト", "きゅうり"],
+      correctAnswer: "にんじん", // Carrot
+    },
+    {
+      question: "What is this snack in Japanese?",
+      img: "/assets/quiz/Snack1.svg",
+      choices: ["ポップコーン", "チョコレート", "プレッツェル", "チップス"],
+      correctAnswer: "ポップコーン", // Popcorn
+    },
+    {
+      question: "What is this dessert in Japanese?",
+      img: "/assets/quiz/Dessert1.svg",
+      choices: ["ケーキ", "アイスクリーム", "クッキー", "ドーナツ"],
+      correctAnswer: "アイスクリーム", // Ice Cream
+    },
+    {
+      question: "これは何ですか？",
+      img: "/assets/quiz/おちゃ.svg",
+      choices: ["おちゃ", "こーひー", "じゅーす", "みず"],
+      correctAnswer: "おちゃ", // Tea
+    },
+    {
+      question: "What is this fruit in Japanese?",
+      img: "/assets/quiz/Fruit2.svg",
+      choices: ["パイナップル", "キウイ", "スイカ", "いちご"],
+      correctAnswer: "パイナップル", // Pineapple
+    },
+
+    {
+      question: "What is this dessert in Japanese?",
+      img: "/assets/quiz/Dessert2.svg",
+      choices: ["ブラウニー", "カップケーキ", "チーズケーキ", "プリン"],
+      correctAnswer: "カップケーキ", // Cupcake
+    },
+    {
+      question: "What is this fruit in Japanese?",
+      img: "/assets/quiz/Fruit3.svg",
+      choices: ["マンゴー", "梨", "さくらんぼ", "グレープフルーツ"],
+      correctAnswer: "マンゴー", // Mango
+    },
+    {
+      question: "What is this vegetable in Japanese?",
+      img: "/assets/quiz/Vegetable3.svg",
+      choices: ["ズッキーニ", "大根", "じゃがいも", "アスパラガス"],
+      correctAnswer: "ズッキーニ", // Zucchini
+    },
+
+    {
+      question: "What is this fruit in Japanese?",
+      img: "/assets/quiz/Fruit4.svg",
+      choices: ["ブルーベリー", "ざくろ", "メロン", "いちじく"],
+      correctAnswer: "ブルーベリー", // Blueberry
+    },
+    {
+      question: "What is this vegetable in Japanese?",
+      img: "/assets/quiz/Vegetable4.svg",
+      choices: ["とうもろこし", "アーティチョーク", "ネギ", "オクラ"],
+      correctAnswer: "とうもろこし", // Corn
+    },
+    {
+      question: "What is this snack in Japanese?",
+      img: "/assets/quiz/Snack4.svg",
+      choices: [
+        "プレッツェルスティック",
+        "レーズン",
+        "ひまわりの種",
+        "チーズパフ",
+      ],
+      correctAnswer: "ひまわりの種", // Sunflower Seeds
+    },
+    {
+      question: "What is this dessert in Japanese?",
+      img: "/assets/quiz/Dessert4.svg",
+      choices: ["タルト", "カンノーロ", "ムース", "フラン"],
+      correctAnswer: "カンノーロ", // Cannoli
+    },
+    {
+      question: "What is this drink in Japanese?",
+      img: "/assets/quiz/Drink4.svg",
+      choices: [
+        "アイスティー",
+        "ホットチョコレート",
+        "ミルクシェイク",
+        "フルーツパンチ",
+      ],
+      correctAnswer: "ミルクシェイク", // Milkshake
+    },
+  ],
+};

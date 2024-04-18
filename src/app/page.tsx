@@ -7,12 +7,19 @@ export default function Home() {
     <div className="bg-orange-300   ">
       <AppNavBar name="home" />
       <main className="relative pt-24">
-        <div className="pb-24  max-w-7xl mt-24   flex justify-between  gap-8 mx-auto ">
+        <div className="text-center overflow-x-visible sm:text-left xl:flex-row pb-36 max-w-7xl sm:mt-24 ml-2 flex flex-col items-center justify-between gap-8 xl:mx-auto ">
+          <Image
+            src={"/assets/images/fish.svg"}
+            alt=" "
+            width={400}
+            height={400}
+            className="xl:hidden"
+          ></Image>
           <section className="z-20">
-            <h1 className="font-bold   text-8xl tracking-tighter ">
-              theJapanese<span className="text-orange-600">Spot</span>
+            <h1 className="font-bold md:whitespace-nowrap text-4xl sm:text-6xl md:text-7xl   xl:text-8xl tracking-tighter ">
+              theJapanese <span className="text-orange-600">Spot</span>
             </h1>
-            <p className="text-2xl mt-8 tracking-tighter max-w-xl text-zinc-800 ">
+            <p className="text-base  sm:text-2xl mt-8 tracking-tighter max-w-xl text-zinc-800 ">
               Learn about the japanese language and culture through our curated
               selection of articles, quizes and more !
             </p>
@@ -21,8 +28,9 @@ export default function Home() {
           <Image
             src={"/assets/images/fish.svg"}
             alt=" "
-            width={700}
-            height={700}
+            width={500}
+            height={500}
+            className="hidden xl:block"
           ></Image>
 
           {/* <div className=" border-black  flex w-full mt-8 mb-10 gap-4 max-w-7xl mx-auto poppins">
@@ -71,51 +79,3 @@ export default function Home() {
     </div>
   );
 }
-
-const Article = () => {
-  return (
-    <div className="flex gap-4 border-b-2 border-black py-6 hover:bg-gray-200 px-4 cursor-pointer">
-      <section>
-        <img
-          className="border-4 border-black"
-          src="/assets/new.png"
-          width={150}
-        />
-      </section>
-      <aside className="space-y-1">
-        <div className="bg-pink-300  px-1 py-1 text-xs font-bold w-fit border-2 border-black">
-          #LEARN
-        </div>
-        <h1 className="text-2xl">
-          WHATS THE DIFFERENCE? COMMON JAPANESE BEGINNER QUESTIONS
-        </h1>
-        <p className="text-sm max-w-2xl line-clamp-2">
-          When youre a beginning learner of Japanese, all youve got are
-          questions. Its easy to get overwhelmed by everything you dont know!
-          Especially when it comes to grammar, there are a lot of grammar points{" "}
-        </p>
-      </aside>
-    </div>
-  );
-};
-
-const Pagination = () => {
-  return (
-    <div className="flex justify-center mt-8">
-      {/* Previous Button */}
-      <a
-        href="#"
-        className="flex items-center justify-center px-4 h-10 text-base font-medium border-2 border-black "
-      >
-        Previous
-      </a>
-      {/* Next Button */}
-      <a
-        href="#"
-        className="flex items-center justify-center px-4 h-10 ms-3 text-base font-medium border-2 border-black"
-      >
-        Next
-      </a>
-    </div>
-  );
-};
