@@ -1,16 +1,16 @@
 import React from "react";
 import AppNavBar from "../components/AppNavBar";
-import Image from "next/image";
+
 import Link from "next/link";
 
-export interface Post {
+interface Post {
   id: number;
   title: string;
   excerpt: string;
   slug: string;
 }
 
-export const posts: Post[] = [
+const posts: Post[] = [
   {
     id: 1,
     title: "What the heck are these colors anyway",
@@ -18,11 +18,6 @@ export const posts: Post[] = [
     slug: "introduction-to-japanese-colors",
   },
 ];
-
-type Item = {
-  name: string;
-  images?: string;
-};
 
 export default function page() {
   return (
