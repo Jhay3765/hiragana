@@ -2,6 +2,7 @@ import React from "react";
 import AppNavBar from "../components/AppNavBar";
 
 import Link from "next/link";
+import Footer from "../components/Footer";
 
 interface Post {
   id: number;

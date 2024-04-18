@@ -11,8 +11,8 @@ export default function Footer() {
         width={200}
         className="w-full"
       ></Image>
-      <div className="relative bg-orange-600">
-        <h2 className="pl-2">Made with Love by Jerone</h2>
+      <div className="relative ">
+        <h2 className="pl-2 bg-orange-600">Made with Love by Jerone</h2>
       </div>
     </>
   );

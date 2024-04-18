@@ -2,6 +2,7 @@ import Link from "next/link";
 import AppNavBar from "./components/AppNavBar";
 import Image from "next/image";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 export default function Home() {
   return (
     <div className="bg-orange-300   ">
@@ -76,6 +77,7 @@ export default function Home() {
           <Pagination />
         </div>
       </section> */}
+      <Footer />
     </div>
   );
 }

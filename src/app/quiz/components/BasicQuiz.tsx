@@ -140,7 +140,7 @@ export default function BasicQuiz(props: any) {
           </p>
         </section>
       </section>
-      <main className=" p-24 py-8 mx-auto w-full max-w-3xl">
+      <main className=" p-8  md:p-24 py-8 mx-auto w-full max-w-3xl">
         <div className="">
           {/* <p>
             selected : {selected} , answer : {answer} , button : , score :
@@ -151,10 +151,10 @@ export default function BasicQuiz(props: any) {
             className="w-full px-12 "
             src={quizData.quizQuestions[count].img}
             alt="Quiz Image"
-            width={400}
-            height={400}
+            width={500}
+            height={500}
           />
-          <p className="pt-2 pb-8 text-xl  md:text-3xl tracking-tighter  text-center  ">
+          <p className="pt-2 pb-8 text-2xl  md:text-3xl tracking-tighter  text-center  ">
             {quizData.quizQuestions[count].question}
           </p>
 

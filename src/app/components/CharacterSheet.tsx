@@ -50,7 +50,7 @@ export function KatakanaSheet() {
   };
 
   return (
-    <main className=" grid grid-cols-5   py-10 gap-4 px-2  max-w-xl ">
+    <main className=" grid grid-cols-5  gap-2 sm:gap-4  py-10  px-2  max-w-xl ">
       {katakanaChart.map((row, rowIndex) => {
         return Object.entries(row.characters).map(([name, english], index) => (
           <Character
