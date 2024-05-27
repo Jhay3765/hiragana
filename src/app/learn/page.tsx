@@ -3,6 +3,7 @@ import AppNavBar from "../components/AppNavBar";
 
 import Link from "next/link";
 import Footer from "../components/Footer";
+import Image from "next/image";
 
 interface Post {
   id: number;
@@ -22,8 +23,18 @@ const posts: Post[] = [
 
 export default function page() {
   return (
-    <div className=" bg-orange-300 min-h-screen">
+    <div className="  min-h-screen">
       <AppNavBar name="learn" />
+      <div className="relative py-48 max-w-7xl mx-auto">
+        <Image
+          src="/assets/rb.jpg"
+          alt=""
+          fill
+          className="w-full   mt-12 bg-cover opacity-70  -z-10"
+        />
+        Japanese Articles
+      </div>
+
       <div className="max-w-7xl mx-auto px-2">
         <p className="text-5xl font-semibold tracking-tighter  mt-12"></p>
         <main className="space-y-8 mt-12 ">
@@ -48,18 +59,18 @@ const Article = (props: Post) => {
   return (
     <Link
       href={`/learn/${props.slug}`}
-      className=" hover:bg-orange-500 transition-all duration-300  p-6  bg-orange-400 rounded-3xl flex flex-col md:flex-row justify-between  "
+      className=" hover:bg-orange-500 transition-all duration-300  p-6  bg-zinc-900 rounded-3xl flex flex-col md:flex-row justify-between  "
     >
       <section className="">
         <h2 className="text-xl md:text-3xl font-bold tracking-tighter">
           {props.title}
         </h2>
 
-        <p className="md:text-lg text-sm text-zinc-800 md:mt-4">
+        <p className="md:text-lg text-sm text-zinc-400 md:mt-4">
           {props.excerpt}
         </p>
       </section>
-      <div className="underline underline-offset-2 text-xs md:text-base self-end hover:font-bold ">
+      <div className="underline underline-offset-2 text-xs md:text-base self-end hover:font-bold text-zinc-400">
         Read More
       </div>
     </Link>

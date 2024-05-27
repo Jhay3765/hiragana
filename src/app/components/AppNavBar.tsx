@@ -6,6 +6,7 @@ import menu from "/public/assets/main/menu.svg";
 import cross from "/public/assets/main/cross.svg";
 
 import Image from "next/image";
+import { X } from "lucide-react";
 type Page = {
   name: string;
 };
@@ -18,8 +19,8 @@ export default function AppNavBar(props: Page) {
   };
 
   return (
-    <div className="max-w-7xl md:mx-auto z-40 md:pt-4 flex items-center justify-between  ">
-      <nav className=" max-w-7xl mx-auto md:rounded-full py-3 flex justify-between text-orange-100 bg-zinc-900 w-full px-4   md:px-12">
+    <div className=" md:mx-auto z-40  flex items-center justify-between  ">
+      <nav className=" mx-auto  py-3 flex justify-between text-orange-100 bg-zinc-900 w-full px-4   md:px-12">
         <Link
           href={"/"}
           className="tracking-tighter font-bold    noto-jp cursor-pointer text-md  md:text-2xl   flex gap-1 items-center"
@@ -56,7 +57,7 @@ export default function AppNavBar(props: Page) {
             >
               Games
             </Link> */}
-            <Link
+            {/* <Link
               href={"/learn"}
               className={`${
                 props.name === "learn"
@@ -65,7 +66,7 @@ export default function AppNavBar(props: Page) {
               } tracking-tighter  rounded-full`}
             >
               Learn
-            </Link>
+            </Link> */}
             <Link
               href={"/quiz"}
               className={`${
@@ -96,14 +97,12 @@ export default function AppNavBar(props: Page) {
 
 const MobileMenu = (props: any) => {
   return (
-    <div className="fixed bg-zinc-900 md:hidden top-0 h-screen  p-8 w-full z-30">
+    <div className="fixed bg-zinc-900 md:hidden top-0 h-screen  p-4 w-full z-30">
       <div className="w-full flex justify-end">
-        <Image
+        <X
+          size={40}
           onClick={props.closeMenu}
-          src={cross}
-          alt=""
-          width={30}
-          className="mb-8 cursor-pointer"
+          className="mb-8 cursor-pointer text-orange-400"
         />
       </div>
       <ul className="text-4xl sm:text-5xl font-bold text-orange-400 z-40 flex flex-col gap-6 w-fit">
